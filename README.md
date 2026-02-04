@@ -25,27 +25,36 @@ Visualization: matplotlib
 
 Environment: Designed for Google Colab (GPU accelerated)
 
-📂 Dataset Structure
-The project utilizes the ICCAD (International Conference on Computer-Aided Design) contest dataset. The code expects the following directory structure:
+## 📂 Dataset Structure
+The project utilizes the ICCAD contest dataset structure. The code utilizes `torchvision.datasets.ImageFolder`, which requires the data to be organized with a separate subdirectory for each class.
 
+Ensure your directory looks like this:
+
+```text
 iccad1_modified/
 ├── train/
-│   ├── Hotspot/       # Images containing lithography defects
-│   └── Not_Hotspot/   # Clean layout images
+│   ├── Hotspot/       # Class 0: Images with defects
+│   └── Not_Hotspot/   # Class 1: Clean images
 └── validation/
     ├── Hotspot/
     └── Not_Hotspot/
-(Note: The notebook currently includes code to mount Google Drive and unzip the dataset automatically. Ensure paths match your local or cloud environment.)
+```
 
 ⚙️ Installation & Usage
 Clone the repository:
 
 Bash
+```
 git clone https://github.com/your-username/semiconductor-vit-research.git
+```
+
 Install dependencies:
 
 Bash
+```
 pip install torch torchvision timm tqdm matplotlib
+```
+
 Run the Notebook:
 Open the .ipynb file in Google Colab or Jupyter Notebook.
 Note: Enable GPU Runtime for efficient training.
